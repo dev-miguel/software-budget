@@ -315,10 +315,12 @@ export default {
 
       this.cardTitle = '';
       this.currentStep = 4;
-      const form = {step1, step2};
+      const step1 = this.step1;
+      const step2 = this.step2;
+      const form = { step1, step2 };
 
       localStorage.setItem('softwareBudget', form);
-      
+
       console.log(localStorage.getItem('softwareBudget'));
 
     },
