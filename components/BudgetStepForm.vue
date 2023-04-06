@@ -312,14 +312,15 @@ export default {
       return dirty || validated ? valid : null;
     },
     onSubmit(event) {
+
       this.cardTitle = '';
       this.currentStep = 4;
-      console.log(JSON.stringify(this.form));
-    },
-    formValid(object) {
-      return Object.keys(object).every(field => {
-        return object[field] && object[field].valid;
-      });
+      const form = {step1, step2};
+
+      localStorage.setItem('softwareBudget', form);
+      
+      console.log(localStorage.getItem('softwareBudget'));
+
     },
     goToStep: async function (step, cardTitle = false) {
 
